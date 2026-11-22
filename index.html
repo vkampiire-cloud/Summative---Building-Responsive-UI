@@ -1,94 +1,81 @@
-<!DOCTYPE html>
-<html lang ="en">
-    <head> 
-        <meta charset ="UTF-8">
-        <meta name = "viewport" content = "width=device -width,inital-scale=1.0">
-        <title> MediGuard -Medication Safety & Recall Portal</title>
-        <link rel = "stylesheet" href = "style.css">
-    </head>
-    <body> 
-        <header class ="header">
-            <div class = "container header -content">
-<div class= "brand">
-    <span class ="brand-icon ">+</span>
-<div>
-<h1 class ="brand-title">MediGuard</h1>
-<p class ="brand-subtitle">National Drug Safety & Recall Intelligence</p>
-</div>
-</div>
-<div class ="system-status">
-<span class ="status-dot"></span>
-<span id  ="server-indicator">Backend: Live</span>
-</div>
-</div>
-</header>
-        <main class = "container">
-            <!-- Search & Filter Controls-->
-             <section class = "controls-panel "  role ="search" aria -label ="Medication Search and Filters">
-                <div class = "search -box">
-                <label for ="search-input" role ="search" aria-label ="Medication Search and Filters"
-            <input 
-            type ="text"
-            id="search -input"
-            placeholder="Search by drug name (e.g.,Ibuprofen , Metformin)..."
-            autocomplete="off"
-            >
-<button id ="serach -btn" type ="button">Search Recalls</button>
-<button id = "reset -bin " type = "button" class = "btn-secondary">Reset</button>
-<div class="filters-row">
-    <div class = "filter-group">
-        <label for ="severity -filter"> FDA Risk Lvel</label>
-        <select  id ="status -filter"> 
-            <option value ="ALL">All Statuses</option>
-        <option value ="All"> All Risk Levels</option>
-<option value = "Class I"> Class I (Servere /Dangerous)</option>
-<option value ="Class II"> Class II(Moderate Risk )</option>
-<option value = "Class III"> Class III(Minor Risk)</option>
-</select>
-</div>
-<div class ="filter-group ">
-    <label for = "status-filter"> Recall statuts:</label>
-<select  id="status-filter">
-   <option value = "ALL"> All statuses</option>
-            <option value ="ongoing "> ongoing </option>
-            <option value = "Completed"> Completed</option>
-            <option value = " terminated"> Terminated</option>
-        
-        </select>
-        </div>
-        <div class = "filter-group ">
-            <label for = "sort-select">Sort By</label>
-            <select id="sort-select">
-                <option value="date-desc">Recall Date (Newest First)</option>
-                <option value="date-asc">Recall Date (oldest First)</option>
-                <option value="name-asc">Product Name (A-Z)</option>
-            </select>
-            </div>
-            </div>
-            </select>
-            <!-- Results Counter & Status Messages-->
-             <div class="results-header">
-                <div id="results-count" class="results-count" arial-live ="polite">Showing active recalls...</div>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediGuard - Medication Safety & Recall Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="brand">
+                <span class="brand-icon" aria-hidden="true">+</span>
+                <div>
+                    <h1 class="brand-title">MediGuard</h1>
+                    <p class="brand-subtitle">National Drug Safety & Recall Intelligence</p>
                 </div>
-                <!--Status Alerts (Loading, Network Error, Empty State)-->
-                <div id="status-message" class="status-box" aria-live="polite"></div>
-                <section class="results-grid" id="results-container" aria-label="Recalled Medications Grid">
-                    <!--Populated dynamically by app.js-->
-                    </section>
-                </main>
-
-                <footer class="footer">
-                    <div class="container footer-content">
-                        <p>Data powerd by the official <a href="https://open.fda.gov/apis/drug/enforcement/" target="_blank" rel="noopener">US Food & Drug Administration (openFDA) API</a>.</p>
-                        <p class="disclaimer">MediGuard is an educational public health system for tracking pharmaceutical recalls. Not mediacal advice.</p>
-                    </div>
-                </footer>
-
-                <scrip src="app.js"></scrip>
-                </body>
-                </html>
+            </div>
+            <div class="system-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="server-indicator">Checking backend…</span>
+            </div>
         </div>
-        </main>
-    </body>
+    </header>
 
+    <main class="container">
+        <section class="controls-panel" role="search" aria-label="Medication search and filters">
+            <div class="search-box">
+                <label class="visually-hidden" for="search-input">Search medication</label>
+                <input type="text" id="search-input" placeholder="Search by drug name (e.g. Ibuprofen, Metformin)..." autocomplete="off">
+                <button id="search-btn" type="button">Search Recalls</button>
+                <button id="reset-btn" type="button" class="btn-secondary">Reset</button>
+            </div>
+
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label for="severity-filter">FDA Risk Level</label>
+                    <select id="severity-filter">
+                        <option value="ALL">All Risk Levels</option>
+                        <option value="Class I">Class I (Severe / Dangerous)</option>
+                        <option value="Class II">Class II (Moderate Risk)</option>
+                        <option value="Class III">Class III (Minor Risk)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="status-filter">Recall Status</label>
+                    <select id="status-filter">
+                        <option value="ALL">All Statuses</option>
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Terminated">Terminated</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-select">Sort By</label>
+                    <select id="sort-select">
+                        <option value="date-desc">Recall Date (Newest First)</option>
+                        <option value="date-asc">Recall Date (Oldest First)</option>
+                        <option value="name-asc">Product Name (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <div class="results-header">
+            <div id="results-count" class="results-count" aria-live="polite">Loading recalls…</div>
+        </div>
+        <div id="status-message" class="status-box" aria-live="polite"></div>
+        <section class="results-grid" id="results-container" aria-label="Recalled Medications Grid"></section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>Data powered by the official <a href="https://open.fda.gov/apis/drug/enforcement/" target="_blank" rel="noopener noreferrer">US Food &amp; Drug Administration (openFDA) API</a>.</p>
+            <p class="disclaimer">MediGuard is an educational public health system for tracking pharmaceutical recalls. Not medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
 </html>

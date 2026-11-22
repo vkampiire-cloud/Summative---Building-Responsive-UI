@@ -1,0 +1,15 @@
+##Python &environment 
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+*.log
+
+#Dependencies &Build 
+nodes_modules/
+
+#Archives &Temporary 
+zip_extracted/
+.DS_Store
+Thumbs.db
