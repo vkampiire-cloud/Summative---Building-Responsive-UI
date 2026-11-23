@@ -1,8 +1,9 @@
 # MediGuard — Drug Safety & Medication Recall Portal
 
 > **Live Deployed Application:** [https://www.vkampiire.tech](https://www.vkampiire.tech)  
-> **Demo Video Link:** `[INSERT_YOUR_2_MINUTE_VIDEO_LINK_HERE]`  
+> **Demo Video Link:** https://youtu.be/ExWeag34fb8
 > **Student:** Vanessa Kampire (African Leadership University)
+> **code vibe report: ** 
 
 ---
 
