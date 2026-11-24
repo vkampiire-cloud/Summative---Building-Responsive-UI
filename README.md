@@ -2,7 +2,7 @@
 
 > **Live Deployed Application:** [https://www.vkampiire.tech](https://www.vkampiire.tech)  
 > **Demo Video Link:** https://youtu.be/ExWeag34fb8
-> **Student:** Vanessa Kampire (African Leadership University)
+> **Student:** Vanessa Kampire 
 > **code vibe report: ** 
 
 ---
@@ -116,43 +116,10 @@ curl -m 3 http://18.130.99.55:5000/api/health
 
 ---
 
-## 7. CodeVibe Authorship & Academic Integrity Verification
-
-This project was developed with continuous authorship monitoring via the **CodeVibe VS Code Extension** to verify student authorship and academic integrity compliance.
-
-### Integrity Verification Summary
-
-| Metric | Result | ALU Policy Requirement | Status |
-| :--- | :--- | :--- | :--- |
-| **Student Identifier** | `v.kampiire@alustudent.com` | Registered ALU Student | **VERIFIED** |
-| **Assignment Name** | `summative building reposnsive UI` | Matching Assignment | **MATCH** |
-| **Assignment ID** | `assignment-1795087717485-z2tcyn2` | Official ALU Tracking ID | **MATCH** |
-| **Total Tracked Lines** | **1,163** lines | Full repository audit | - |
-| **Manual Code Authorship** | **1,023** lines (**88.0%**) | $\ge 80.0\%$ manual lines | **PASS** |
-| **Flagged AI Assistance** | **140** lines (**12.0%**) | $\le 20.0\%$ AI ceiling | **PASS** |
-| **Prohibited Code Lines** | **0** lines (**0.0%**) | 0 prohibited sources | **PASS** |
-| **Code Review Ownership Score** | **100 / 100** | Full line-by-line review | **PASS** |
-| **Files Reviewed** | **100%** (1 of 1 active files) | All code files reviewed | **PASS** |
-| **Integrity Seal (SHA-256)** | `d1ec2d2824eb3eeab92d6439253080f4426b5bb3fa798cc1f924d5bc1e089449` | Cryptographic seal intact | **SEALED** |
+## 7. CodeVibe Authorship 
 
 ### CodeVibe Report Files
 * **Root Verification Report:** [`code.vibe.json`](code.vibe.json)
 * **Submissions Folder Archive:** [`codevibe-reports/v.kampiire.report.json`](codevibe-reports/v.kampiire.report.json)
 
-### Quick Integrity Verification Command
-Evaluators can independently inspect the cryptographically sealed report in terminal:
-
-```bash
-# Print key CodeVibe metrics directly from the sealed report
-python3 -c "
-import json
-with open('code.vibe.json') as f:
-    r = json.load(f)
-m = r['metrics']
-print(f'Student: {r[\"studentIdentifier\"]}')
-print(f'Manual Code: {m[\"authorship\"][\"manualLines\"]} / {m[\"authorship\"][\"totalLines\"]} lines')
-print(f'Ownership Score: {m[\"ownership\"][\"score\"]}/100')
-print(f'Integrity Hash: {r[\"integrity\"][\"hash\"]}')
-"
-```
 
